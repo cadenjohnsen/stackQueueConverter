@@ -20,7 +20,6 @@ struct queue_from_stacks* queue_from_stacks_create() {
 	queue->s2 = stack_create();
 
 	return queue;
-	//return NULL;
 }
 
 /*
@@ -97,12 +96,10 @@ int queue_from_stacks_front(struct queue_from_stacks* queue) {
 	}
 	while(!stack_isempty(queue->s1)) {
     value2 = stack_pop(queue->s1);
-		//queue_from_stacks_enqueue(queue, value2);
 		stack_push(queue->s2, value2);
   }
 
   return value;
-	//return 0;
 }
 
 /*
@@ -130,13 +127,10 @@ int queue_from_stacks_dequeue(struct queue_from_stacks* queue) {
   }
   while(!stack_isempty(queue->s1)) {
     value2 = stack_pop(queue->s1);
-		//queue_from_stacks_enqueue(queue, value2);
-		//if(!stack_isempty(queue->s2))
 			stack_push(queue->s2, value2);
   }
 	//all enqueue values are 17,
 	//first element after dequeueing,
 	//should be different
   return value;
-	//return 0;
 }

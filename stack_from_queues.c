@@ -19,7 +19,6 @@ struct stack_from_queues* stack_from_queues_create() {
   stack->q1 = queue_create();
   stack->q2 = queue_create();
   return stack;
-  //return NULL;
 }
 
 /*
@@ -72,10 +71,6 @@ int stack_from_queues_isempty(struct stack_from_queues* stack) {
 void stack_from_queues_push(struct stack_from_queues* stack, int value) {
   assert(stack);
   queue_enqueue(stack->q2, value);
-  /*while(!queue_isempty(stack->q1)) {
-    queue_enqueue(stack->q2, stack_from_queues_top(stack));
-    queue_dequeue(stack->q1);
-  }*/
 }
 
 /*
